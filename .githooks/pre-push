@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "[hook] Running mvn -B clean verify ..."
+if ! mvn -B clean verify; then
+  echo "[hook] Validation FAILED - operation aborted."
+  exit 1
+fi
+exit 0
