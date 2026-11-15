@@ -14,4 +14,4 @@ jobs:
           distribution: temurin
           java-version: "17"
           cache: maven
-      - run: mvn -B clean verifyS
+      - run: mvn -B clean verify
