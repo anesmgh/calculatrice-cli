@@ -1,7 +1,7 @@
 package dz.univ.calculatrice;
 
 public interface Operation {
-    double apply(double a, double b);
+    double execute(double first, double second);
 
     String symbol();
 }
