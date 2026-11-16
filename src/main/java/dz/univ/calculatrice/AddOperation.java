@@ -2,8 +2,8 @@ package dz.univ.calculatrice;
 
 public class AddOperation implements Operation {
     @Override
-    public double apply(final double a, final double b) {
-        return a + b;
+    public double execute(final double first, final double second) {
+        return first + second;
     }
 
     @Override

@@ -5,26 +5,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class AddOperationTest {
-    private final AddOperation op = new AddOperation();
+    private final AddOperation operation = new AddOperation();
 
     @Test
-    void addsPositiveNumbers() {
-        assertEquals(5.0, op.apply(2, 3), 1e-9);
+    void shouldAddTwoPositiveNumbers() {
+        assertEquals(7.0, operation.execute(3.0, 4.0), 1e-9);
     }
 
     @Test
-    void addsNegativeNumbers() {
-        assertEquals(-5.0, op.apply(-2, -3), 1e-9);
-        assertEquals(1.0, op.apply(-2, 3), 1e-9);
+    void shouldAddNegativeAndPositiveNumbers() {
+        assertEquals(1.0, operation.execute(-2.0, 3.0), 1e-9);
     }
 
     @Test
-    void addsDecimals() {
-        assertEquals(15.5, op.apply(12.5, 3), 1e-9);
+    void shouldAddTwoNegativeNumbers() {
+        assertEquals(-5.0, operation.execute(-2.0, -3.0), 1e-9);
+    }
+
+    @Test
+    void shouldAddDecimalNumbers() {
+        assertEquals(3.75, operation.execute(1.25, 2.5), 1e-9);
+        assertEquals(15.5, operation.execute(12.5, 3.0), 1e-9);
     }
 
     @Test
     void symbolIsPlus() {
-        assertEquals("+", op.symbol());
+        assertEquals("+", operation.symbol());
     }
 }
